@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://t7e048txbqq"]
+
+[ext_resource type="Script" uid="uid://cqx6m4yb2xifi" path="res://Paddle/paddle.gd" id="1_80tri"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80tri"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig03h"]
+albedo_color = Color(0.24705882, 0.84313726, 0.27058825, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_80tri"]
+material = SubResource("StandardMaterial3D_ig03h")
+size = Vector3(5, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_plu76"]
+size = Vector3(5, 1, 1)
+
+[node name="Paddle" type="AnimatableBody3D" unique_id=640241229]
+process_mode = 3
+collision_mask = 6
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_80tri")
+script = ExtResource("1_80tri")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=504877405]
+mesh = SubResource("BoxMesh_80tri")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1000573384]
+shape = SubResource("BoxShape3D_plu76")

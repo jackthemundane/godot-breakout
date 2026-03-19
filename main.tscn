@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dqqdmismi0wka"]
+
+[ext_resource type="PackedScene" uid="uid://bx0vyc62wljq6" path="res://Board/board.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c3arr2135u626" path="res://Ball/ball.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://t7e048txbqq" path="res://Paddle/paddle.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node3D" unique_id=993328279]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=256292308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.50788, 0)
+light_energy = 100.0
+omni_range = 75.0
+
+[node name="Board" parent="." unique_id=141165897 instance=ExtResource("1_ig7tw")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1088913747]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 39, 0)
+
+[node name="Ball" parent="." unique_id=2087965859 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 22.908337)
+
+[node name="Paddle" parent="." unique_id=1460447489 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 25.361431)
