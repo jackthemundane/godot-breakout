@@ -15,6 +15,15 @@ run/main_scene="uid://dqqdmismi0wka"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameData="*uid://x83tnv0rqjj5"
+
+[global_group]
+
+brick=""
+paddle=""
+
 [input]
 
 move_left={

@@ -19,6 +19,8 @@ mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_l4sn5")
 gravity_scale = 0.0
 continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_l4sn5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2095189288]
@@ -26,3 +28,5 @@ mesh = SubResource("SphereMesh_g3thm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=495046699]
 shape = SubResource("SphereShape3D_l4sn5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dvu7r8uwde23f"]
+
+[ext_resource type="Script" uid="uid://ctl53opey3h00" path="res://Brick/brick.gd" id="1_wurha"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mn6gn"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wurha"]
+albedo_color = Color(1, 0.27058825, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t5b8g"]
+material = SubResource("StandardMaterial3D_wurha")
+size = Vector3(4, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jn20"]
+size = Vector3(4, 1, 1)
+
+[node name="Brick" type="StaticBody3D" unique_id=1918434762 groups=["brick"]]
+physics_material_override = SubResource("PhysicsMaterial_mn6gn")
+script = ExtResource("1_wurha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1780559266]
+mesh = SubResource("BoxMesh_t5b8g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1268977555]
+shape = SubResource("BoxShape3D_0jn20")

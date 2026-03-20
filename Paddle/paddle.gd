@@ -1,6 +1,11 @@
 extends AnimatableBody3D
 
 @export var speed: float = 30.0
+@export var paddle_width: float = 5
+var half_width: float
+
+func _ready() -> void:
+	set_width(paddle_width)
 
 func _physics_process(delta: float) -> void:
 	# Get the horizontal input (-1 for left, 1 for right)
@@ -13,3 +18,8 @@ func _physics_process(delta: float) -> void:
 	# but because it's "Animatable," it will push the RigidBody (ball) 
 	# with infinite force without being moved back itself.
 	move_and_collide(movement)
+
+func set_width(new_width: float) -> void:
+	$MeshInstance3D.mesh.size.x = new_width
+	$CollisionShape3D.shape.size.x = new_width
+	half_width = new_width/2

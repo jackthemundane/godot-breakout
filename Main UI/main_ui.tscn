@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bh81c680h7t5n"]
+
+[ext_resource type="Script" uid="uid://dktf0uuu4wjwv" path="res://Main UI/main_ui.gd" id="1_t8vif"]
+
+[node name="MainUI" type="CanvasLayer" unique_id=417533238]
+script = ExtResource("1_t8vif")
+
+[node name="Start" type="Control" parent="." unique_id=1010006847]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="Start" unique_id=524399812]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="Pause" type="Control" parent="." unique_id=1996213642]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="Pause" unique_id=993089344]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume Game"
+
+[node name="GameOver" type="Control" parent="." unique_id=1540495984]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver" unique_id=265953086]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -33.0
+offset_right = 43.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TryAgain" type="Button" parent="GameOver/VBoxContainer" unique_id=1374034812]
+layout_mode = 2
+text = "Try Again"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/VBoxContainer" unique_id=2088337865]
+layout_mode = 2
+
+[node name="ExitGame" type="Button" parent="GameOver/VBoxContainer" unique_id=1381631209]
+layout_mode = 2
+text = "Exit Game"
+
+[node name="HighScore" type="Control" parent="." unique_id=1977470979]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HighScore" unique_id=529156369]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="HighScoreLabel" type="Label" parent="HighScore/VBoxContainer" unique_id=1936171091]
+layout_mode = 2
+text = "000000000"
+
+[node name="Lives" type="Control" parent="." unique_id=1476151023]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lives" unique_id=782910936]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="LivesLabel" type="Label" parent="Lives/VBoxContainer" unique_id=652622731]
+layout_mode = 2
+text = "Lives: 3"
+horizontal_alignment = 2

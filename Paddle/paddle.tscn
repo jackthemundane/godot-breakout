@@ -16,7 +16,7 @@ size = Vector3(5, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_plu76"]
 size = Vector3(5, 1, 1)
 
-[node name="Paddle" type="AnimatableBody3D" unique_id=640241229]
+[node name="Paddle" type="AnimatableBody3D" unique_id=640241229 groups=["paddle"]]
 process_mode = 3
 collision_mask = 6
 axis_lock_linear_y = true
