@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c83433m6it4cr"]
+
+[ext_resource type="Script" uid="uid://o7iwamsx5n77" path="res://Power Up/power_up.gd" id="1_t2va7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2ebdc"]
+height = 4.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t2va7"]
+height = 4.0
+
+[sub_resource type="FontFile" id="FontFile_gumgx"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/85/0/ascent = 0.0
+cache/0/85/0/descent = 0.0
+cache/0/85/0/underline_position = 0.0
+cache/0/85/0/underline_thickness = 0.0
+cache/0/85/0/scale = 1.0
+cache/0/800/0/ascent = 0.0
+cache/0/800/0/descent = 0.0
+cache/0/800/0/underline_position = 0.0
+cache/0/800/0/underline_thickness = 0.0
+cache/0/800/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/200/0/ascent = 0.0
+cache/0/200/0/descent = 0.0
+cache/0/200/0/underline_position = 0.0
+cache/0/200/0/underline_thickness = 0.0
+cache/0/200/0/scale = 1.0
+
+[node name="PowerUp" type="RigidBody3D" unique_id=1754977876]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 16
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_t2va7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1644478088]
+mesh = SubResource("CapsuleMesh_2ebdc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2135423895]
+shape = SubResource("CapsuleShape3D_t2va7")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=587684570]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.55674744, -2.4336204e-08, 0.0067806244)
+billboard = 1
+text = "EXT"
+font = SubResource("FontFile_gumgx")
+font_size = 200
+uppercase = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

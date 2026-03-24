@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bx0vyc62wljq6"]
 
+[ext_resource type="Script" uid="uid://dudwsaet7l6ec" path="res://Board/kill_zone.gd" id="1_6dqwo"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bggei"]
 albedo_color = Color(0.3984868, 0.5203934, 0.95883125, 1)
 
@@ -52,19 +54,8 @@ size = Vector3(1, 1, 56)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghvr1"]
 size = Vector3(1, 1, 56)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ghvr1"]
-friction = 0.0
-bounce = 1.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74xf4"]
-albedo_color = Color(0.18039216, 0.08627451, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_fy6tj"]
-material = SubResource("StandardMaterial3D_74xf4")
-size = Vector3(46, 1, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7ncmu"]
-size = Vector3(46, 1, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_bggei"]
+size = Vector3(50, 2, 1)
 
 [node name="Board" type="Node3D" unique_id=141165897]
 
@@ -112,14 +103,12 @@ mesh = SubResource("BoxMesh_glpmc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EastWall" unique_id=2091902266]
 shape = SubResource("BoxShape3D_ghvr1")
 
-[node name="SouthWall" type="StaticBody3D" parent="." unique_id=2139070821]
+[node name="KillZone" type="Area3D" parent="." unique_id=2017021685]
+collision_mask = 2
+script = ExtResource("1_6dqwo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone" unique_id=1845775854]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 28)
-collision_layer = 4
-collision_mask = 0
-physics_material_override = SubResource("PhysicsMaterial_ghvr1")
+shape = SubResource("BoxShape3D_bggei")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SouthWall" unique_id=412792906]
-mesh = SubResource("BoxMesh_fy6tj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SouthWall" unique_id=321162769]
-shape = SubResource("BoxShape3D_7ncmu")
+[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvu7r8uwde23f"]
 
 [ext_resource type="Script" uid="uid://ctl53opey3h00" path="res://Brick/brick.gd" id="1_wurha"]
+[ext_resource type="PackedScene" uid="uid://c83433m6it4cr" path="res://Power Up/power_up.tscn" id="2_t5b8g"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mn6gn"]
 friction = 0.0
@@ -17,8 +18,12 @@ size = Vector3(4, 1, 1)
 size = Vector3(4, 1, 1)
 
 [node name="Brick" type="StaticBody3D" unique_id=1918434762 groups=["brick"]]
+collision_layer = 4
+collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_mn6gn")
 script = ExtResource("1_wurha")
+brick_type = null
+power_up_scene = ExtResource("2_t5b8g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1780559266]
 mesh = SubResource("BoxMesh_t5b8g")
